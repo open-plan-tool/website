@@ -1,5 +1,4 @@
 /static/assets/*.pdf
 *.ipynb
-/*.html
 .idea/*
 *.pyc
