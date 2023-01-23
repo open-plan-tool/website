@@ -3,32 +3,44 @@ import time
 import uvicorn
 import threading
 import contextlib
+import itertools
 
-from webapp import app
+from webapp import app, languages
 
 
 def convert_webapp_to_html_files():
     url_list = ["", "imprint", "publications", "privacy"]
-
     url_base = "http://127.0.0.1:5001"
 
-    for url in url_list:
-
-        r = requests.get(url_base + "/" + url)
+    for item in itertools.product(languages, url_list):
+        locale, url = item
+        r = requests.get(url_base + "/" + locale + "/" + url)
 
         if url == "":
             fname = "index"
         else:
             fname = url
 
-        with open(f"{fname}.html", "w") as fp:
+        with open(f"{fname}_{locale}.html", "w") as fp:
             html_text = r.text
 
             # replace href to other endpoints with html files
             for href in url_list[1:]:
                 html_text = html_text.replace(
-                    f'href="{url_base}/{href}"', f'href="{href}.html"'
+                    f'href="{url_base}/{locale}/{href}"', f'href="{href}_{locale}.html"'
                 )
+                html_text = html_text.replace(
+                    f'href="/{locale}"', f'href="index_{locale}.html"'
+                )
+
+                # for the nav bar change
+                for l in languages:
+                    html_text = html_text.replace(
+                        f'href="{url_base}/{l}/{href}"', f'href="{href}_{l}.html"'
+                    )
+                    html_text = html_text.replace(
+                        f'href="{url_base}/{l}"', f'href="index_{l}.html"'
+                    )
 
             # fix href to css, js, and images files in the static folder
             html_text = html_text.replace("../static", "static")
