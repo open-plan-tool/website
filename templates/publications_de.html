@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}open_plan - Veröffentlichungen{% endblock %}
+
+
+{% macro publication_item(label="", sub_text="", file_link="") -%}
+<div class="item">
+  <div class="item__img">
+    <img src="{{ url_for('static', path='assets/open_plan_publication.svg') }}" alt="Blatt Papier">
+  </div>
+  <div class="item__text">
+    <h2><a href="{{ url_for('static', path='assets/' + file_link) }}">{{ label }}</a></h2>
+    <p>{{ sub_text }}</p>
+  </div>
+</div>
+
+{%- endmacro %}
+
+
+{%- block content %}
+<main class="publications">
+  <div class="publikationen__wrap">
+    <div class="publications__header">
+      <h1>Publikationen</h1>
+    </div>
+    <div class="publications__img">
+      <img src="../static/assets/Publikationen.svg" alt="Computer und wissenschaftliche Publikationen">
+    </div>
+    <div class="publications__content">
+      {{ publication_item(label="2022-11-16 Workshop", sub_text="Zusammenfassung des vierten Stakeholder-Workshops zu Ergebnisbereich und thermischen Komponenten", file_link="2022-11-16_report_stakeholder_workshop.pdf") }}
+      {{ publication_item(label="2021 Jahresbericht", sub_text="Zusammenfassung der im Jahr erreichten Ziele", file_link="2021_12_Jahresbericht.pdf") }}
+      {{ publication_item(label="2021-10-20 Workshop", sub_text="Zusammenfassung des dritten Stakeholder-Workshops zum ersten Release des Tools.", file_link="2021-10-20_stakeholder_workshop_zusammenfassung.pdf") }}
+      {{ publication_item(label="2021-07-01 Master Thesis", sub_text="Analyse der Auswirkungen auf die Netzanschlussleistung bei der Erhöhung der Eigenversorgung eines Industrieparks durch den Ausbau von erneuerbaren Energien und Speichern", file_link="Master_thesis_F_Hirschmueller.pdf") }}
+      {{ publication_item(label="2021-06-14 Master Thesis", sub_text="Analyse des Einsatzes unterschiedlicher Energiezellengrößen als Ansatz zur Integration dezentraler erneuerbarer Energiequellen", file_link="Master_thesis_A_Backhaus.pdf") }}
+      {{ publication_item(label="2021-03-17 Workshop", sub_text="Zusammenfassung des zweiten Stakeholder-Workshops zu Tool-Funktionalitäten.", file_link="2021-03-17_report_stakeholder_workshop.pdf") }}
+      {{ publication_item(label="2020 annual report", sub_text="Zusammenfassung der im Jahr erreichten Ziele", file_link="2020_12_annual_report.pdf") }}
+      {{ publication_item(label="2020-05-13 Workshop", sub_text="Zusammenfassung des ersten Stakeholder-Workshops zu Werkzeuganforderungen", file_link="2020-05-13_report_stakeholder_workshop.pdf") }}
+    </div>
+  </div>
+</main>
+
+{% endblock content %}

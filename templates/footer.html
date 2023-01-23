@@ -5,12 +5,17 @@
     </div>
     <div class="footer__content">
       <div class="footer__links">
-        <a href="https://github.com/rl-institut/open_plan" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="{{ url_for('imprint') }}">Imprint</a>
-        <a href="{{ url_for('privacy') }}">Privacy</a>
+        <a href="https://github.com/open-plan-tool" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="{{ url_for('imprint', locale=locale) }}">{% if locale == "en"%} Imprint {% else %} Impressum {% endif %}</a>
+        <a href="{{ url_for('privacy', locale=locale) }}">{% if locale == "en"%} Privacy {% else %} Datenschutz {% endif %}</a>
       </div>
       <div class="footer__licence">
-        <p>Content of this webpage - except for the partner logos - is licensed under CC-BY-4.0 conditions.</p>
+        <p>{% if locale == "en"%}
+					Content of this webpage - except for the partner logos - is licensed under CC-BY-4.0 conditions.
+					{% else %}
+					Der Inhalt dieser Webseite - mit Ausnahme der Partnerlogos - ist unter CC-BY-4.0-Bedingungen lizenziert.
+					{% endif %}
+					</p>
       </div>
     </div>
   </div>
