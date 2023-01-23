@@ -33,6 +33,15 @@ def convert_webapp_to_html_files():
                     f'href="/{locale}"', f'href="index_{locale}.html"'
                 )
 
+                # for the nav bar change
+                for l in languages:
+                    html_text = html_text.replace(
+                        f'href="{url_base}/{l}/{href}"', f'href="{href}_{l}.html"'
+                    )
+                    html_text = html_text.replace(
+                        f'href="{url_base}/{l}"', f'href="index_{l}.html"'
+                    )
+
             # fix href to css, js, and images files in the static folder
             html_text = html_text.replace("../static", "static")
             html_text = html_text.replace(url_base + "/static", "static")

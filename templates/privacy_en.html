@@ -1,50 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="open_plan is developing an open-source planning tool">
-  <title>open_plan - Privacy and Data Protection</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
-  <link rel="manifest" href="static/favicon/site.webmanifest">
-  <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#1f567d">
-  <meta name="msapplication-TileColor" content="#1f567d">
-  <meta name="theme-color" content="#ffffff">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css"
-    integrity="sha512-dMUQinc1gbNb95AFtKtP4q/g56T8r9oDxlWy0hrHyzfUbMq/vQztAqaR/FDY/bY0R1Ikc30aq94jyQH2Ix++ug=="
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="static/css/style.css">
-  <script src="static/js/project.js"></script>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<body>
-  <div class="content">
-    <nav class="nav">
-  <div class="nav__wrap">
-    <div class="nav__logo">
-      <a href="/{{ locale }}">
-        <img src="static/assets/logos/open_plan_logo.svg" alt="open_plan logo">
-      </a>
-    </div>
-  </div>
-</nav>
+{% block description %}<meta name="description" content="open_plan is developing an open-source planning tool">{% endblock %}
+{% block title %}open_plan - Privacy and Data Protection{% endblock %}
 
-
+{% block content %}
 <main class="privacy">
   <div class="privacy__wrap">
     <!--<div class="to-home-anchor">
-      <a href="/">home page</a>
+      <a href="/{{ locale }}">main page</a>
     </div>-->
     <div class="privacy__heading">
       <h1>Privacy and Data Protection</h1>
     </div>
     <div class="privacy__content">
-      <h2><strong> I. Name and address of the person responsible</strong></h4>.
+      <h2><strong> I. Name and address of the person responsible</strong></h4>. 
 The controller within the meaning of the General Data Protection Regulation and other national data protection laws of the member states as well as other data protection regulations is the:<br><br>
 Reiner Lemoine Institute gGmbH<br>.
 Rudower Chaussee 12<br>
@@ -77,9 +46,9 @@ The personal data of the data subject will be deleted or blocked as soon as the 
 <br><br>
 <h2><strong> IV. Provision of the website and creation of log files</h4></strong>.
 <strong> 1. Description and scope of data processing</strong><br><br>.
-With each call to our website, our system automatically collects data and information from the computer system of the calling computer.
+With each call to our website, our system automatically collects data and information from the computer system of the calling computer. 
 The following data is collected in this process: <br><br>.
-<ol>
+<ol> 
 <li> Information about the browser type and version used </li>.
 <li> The operating system </li>
 <li> The Internet service provider </li>
@@ -106,7 +75,7 @@ The collection of data for the provision of the website and the storage of data 
 <br><br>
 <h2><strong> V. Business contacts</h4></strong>
 <strong> 1. Description and scope of data processing</strong><br><br>.
-On our website, the e-mail addresses of all employees are mentioned for the possibility of contact. If a user* takes advantage of this option, the personal data of the user* transmitted with the e-mail will be stored. <br>
+On our website, the email addresses of all employees are mentioned for the possibility of contacting them. If a user* takes advantage of this option, the personal data of the user* transmitted with the e-mail will be stored. <br>
 In this context, the data will not be passed on to third parties. The data will be used exclusively for processing the conversation.<br><br>.
 Contact data transmitted to the RLI in person, by telephone or by other means for the purpose of conducting business or exchanging information in the context of research work may also be stored electronically. Again, this information will not be shared with third parties.
 <br><br>
@@ -129,7 +98,7 @@ All personal data stored in the course of contact will be deleted in this case.
 <strong>1. Right of access</strong><br><br>.
 You may request confirmation from the controller as to whether personal data concerning you are being processed by us. <br>
 If there is such processing, you can request information from the controller about the following information: <br><br>.
-<ol>
+<ol> 
 <li> the purposes for which the personal data are processed;</li>.
 <li> the categories of personal data which are processed;</li>.
 <li> the recipients or categories of recipients to whom the personal data relating to you have been or will be disclosed;</li>
@@ -148,7 +117,7 @@ Your right to rectification may be limited to the extent that it is likely to re
 <br><br>
 <strong> 3. Right to restriction of processing</strong><br><br>.
 Under the following conditions, you may request the restriction of the processing of personal data concerning you:<br><br>.
-<ol>
+<ol> 
 <li> if you contest the accuracy of the personal data concerning you for a period enabling the controller to verify the accuracy of the personal data;</li>.
 <li> the processing is unlawful and you object to the erasure of the personal data and request instead the restriction of the use of the personal data;</li>
 <li> the controller no longer needs the personal data for the purposes of processing, but you need it for the assertion, exercise or defense of legal claims; or</li>.
@@ -162,7 +131,7 @@ Your right to restriction of processing may be limited to the extent that it is 
 <strong>4. Right to erasure</strong><br><br>.
 a) Obligation to delete<br>.
 You may request the data controller to erase the personal data concerning you without undue delay, and the data controllers are obliged to erase such data without undue delay, if one of the following reasons applies: <br><br>.
-<ol>
+<ol> 
 <li> The personal data concerning you are no longer necessary for the purposes for which they were collected or otherwise processed.</li>
 <li> You revoke your consent on which the processing was based pursuant to Art. 6 (1) a or Art. 9 (2) a DSGVO and there is no other legal basis for the processing. </li>
 <li> You object to the processing pursuant to Art. 21 (1) DSGVO and there are no overriding legitimate grounds for the processing, or you object to the processing pursuant to Art. 21 (2) DSGVO. </li>
@@ -174,7 +143,7 @@ b) Information to third parties<br>
 If the data controller has made the personal data concerning you public and is obliged to erase it pursuant to Article 17(1) of the GDPR, it shall, taking into account the available technology and the cost of implementation, take reasonable steps, including technical measures, to inform data controllers which process the personal data that you, as the data subject, have requested from them the erasure of all links to, or copies or replications of, such personal data. <br>
 c) Exceptions<br>.
 The right to erasure does not exist to the extent that the processing is necessary<br><br>.
-<ol>
+<ol> 
 <li>to exercise the right to freedom of expression and information;</li>.
 <li> for compliance with a legal obligation which requires processing under Union or Member State law to which the controller is subject, or for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;</li> <li> for reasons of public interest.
 <li> for reasons of public interest in the field of public health pursuant to Article 9(2)(h) and (i) and Article 9(3) of the GDPR;</li>.
@@ -187,11 +156,11 @@ You have the right vis-à-vis the data controllers to be informed about these re
 <br><br>
 <strong>6. Right to data portability</strong><br><br>.
 You have the right to receive the personal data concerning you that you have provided in a structured, common and machine-readable format. In addition, you have the right to transfer this data to another responsible person without hindrance from the responsible person to whom the personal data was provided, provided<br><br>.
-<ol>
+<ol> 
 <li> the processing is based on consent pursuant to Art. 6 para. 1 lit. a DSGVO or Art. 9 para. 2 lit. a DSGVO or on a contract pursuant to Art. 6 para. 1 lit. b DSGVO and</li>.
 <li> the processing is carried out with the help of automated procedures.</li>
 </ol>
-In exercising this right, you also have the right to obtain that the personal data concerning you be transferred directly from one responsible person to another responsible person, insofar as this is technically feasible. Freedoms and rights of other persons must not be affected by this. <br>
+In exercising this right, you also have the right to obtain that the personal data concerning you be transferred directly from one responsible person to another responsible person, insofar as this is technically feasible. Freedoms and rights of other persons may not be affected by this. <br>
 The right to data portability does not apply to processing of personal data necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller.
 <br><br>
 <strong>7. Right to object</strong><br><br>.
@@ -203,12 +172,12 @@ You have the possibility, in connection with the use of information society serv
 You also have the right to object, on grounds relating to your particular situation, to the processing of personal data concerning you which is carried out for scientific or historical research purposes or for statistical purposes pursuant to Article 89(1) of the GDPR. <br>
 Your right to object may be limited to the extent that it is likely to render impossible or seriously impede the achievement of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.
 <br><br>
-<strong> 8. Right to withdraw your data protection consent</strong><br><br>.
+<strong> 8. Right to withdraw consent under data protection law</strong><br><br>.
 You have the right to revoke your declaration of consent under data protection law at any time. The revocation of consent does not affect the lawfulness of the processing carried out on the basis of the consent until the revocation.
 <br><br>
 <strong> 9. Automated decision in individual cases including profiling</strong><br><br>.
 You have the right not to be subject to a decision based solely on automated processing - including profiling - which produces legal effects concerning you or similarly significantly affects you. This does not apply if the decision<br><br>.
-<ol>
+<ol> 
 <li>is necessary for the conclusion or performance of a contract between you and the responsible person,</li>.
 <li> is permitted by legislation of the Union or the Member States to which the controller is subject and that legislation contains appropriate measures to safeguard your rights and freedoms and your legitimate interests, or</li>.
 <li>is done with your explicit consent.</li>
@@ -221,33 +190,12 @@ Without prejudice to any other administrative or judicial remedy, you have the r
 The supervisory authority to which the complaint has been lodged shall inform the complainant of the status and outcome of the complaint, including the possibility of a judicial remedy under Article 78 GDPR.
 <br><br>
 <strong>Validity of the privacy policy</strong><br><br>.
-We reserve the right to change or adapt this privacy statement from time to time. This statement was last modified on 11.08.2020
+We reserve the right to change or adapt this privacy statement from time to time. This statement was last modified on 11.08.2020.
 </span>
     </div>
     <div class="to-home-anchor">
-      <a href="/{{ locale }}">Home page</a>.
+      <a href="/{ locale }}">Home page</a>.
     </div>
   </div>
 </main>
-
-  </div>
-    <footer class="footer">
-  <div class="footer__wrap">
-    <div class="footer__logo">
-      <img src="static/assets/logos/open_plan_logo.svg" alt="open_plan logo">
-    </div>
-    <div class="footer__content">
-      <div class="footer__links">
-        <a href="https://github.com/rl-institut/open_plan" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="imprint.html">Imprint</a>
-        <a href="privacy.html">Privacy</a>
-      </div>
-      <div class="footer__licence">
-        <p>Content of this webpage - except for the partner logos - is licensed under CC-BY-4.0 conditions.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-</body>
-
-</html>
+{% endblock content %}
