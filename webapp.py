@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI, Request, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse
 
 from utils.compile_scss import convert_scss_to_css
 
@@ -30,26 +31,40 @@ app.mount(
 
 templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 
+languages = ["en", "de"]
+default_fallback = "en"
 
 @app.get("/")
 def landing(request: Request) -> Response:
+    return RedirectResponse(request.url_for("landing_locale", locale="en"))
+
+@app.get("/{locale}")
+def landing_locale(request: Request, locale: str) -> Response:
     compile_scss_files()
-    return templates.TemplateResponse("index.html", {"request": request})
+    if locale not in languages:
+        locale = default_fallback
+    return templates.TemplateResponse(f"index_{locale}.html", {"request": request, "locale": locale})
 
 
-@app.get("/imprint")
-def imprint(request: Request) -> Response:
+@app.get("/{locale}/imprint")
+def imprint(request: Request, locale: str) -> Response:
     compile_scss_files()
-    return templates.TemplateResponse("imprint.html", {"request": request})
+    if locale not in languages:
+        locale = default_fallback
+    return templates.TemplateResponse(f"imprint_{locale}.html", {"request": request, "locale": locale})
 
 
-@app.get("/privacy")
-def privacy(request: Request) -> Response:
+@app.get("/{locale}/privacy")
+def privacy(request: Request, locale: str) -> Response:
     compile_scss_files()
-    return templates.TemplateResponse("privacy.html", {"request": request})
+    if locale not in languages:
+        locale = default_fallback
+    return templates.TemplateResponse(f"privacy_{locale}.html", {"request": request, "locale": locale})
 
 
-@app.get("/publications")
-def publications(request: Request) -> Response:
+@app.get("/{locale}/publications")
+def publications(request: Request, locale: str) -> Response:
     compile_scss_files()
-    return templates.TemplateResponse("publications.html", {"request": request})
+    if locale not in languages:
+        locale = default_fallback
+    return templates.TemplateResponse(f"publications_{locale}.html", {"request": request, "locale": locale})

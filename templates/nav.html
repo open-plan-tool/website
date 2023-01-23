@@ -1,9 +1,22 @@
 <nav class="nav">
   <div class="nav__wrap">
     <div class="nav__logo">
-      <a href="/">
+      <a href="/{{ locale }}">
         <img src="../static/assets/logos/open_plan_logo.svg" alt="open_plan logo">
       </a>
     </div>
+		<div class="nav__locale">
+			<div class="dropdown">
+				<button class="dropbtn btn" type="button" >{{ locale }}</button>
+			  <div class="dropdown-content">
+					<a href="{{ request.url| replace(locale, 'en') }}">en</a>
+					<a href="{{ request.url| replace(locale, 'de') }}">de</a>
+				</div>
+
+			</div>
+
+
+		</div>
+
   </div>
 </nav>
