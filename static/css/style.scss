@@ -650,8 +650,12 @@ html {
 		text-align: center;
 		img {
 			width: 100%;
-			max-width: 32rem;
+			max-width: 50rem;
+			padding: 3rem;
+			padding-bottom:1.75rem;
+			box-shadow: 0 8px 32px 16px rgba(31,86,125,0.08);
 		}
+
 	}
 
 	&__text p, h3 {
